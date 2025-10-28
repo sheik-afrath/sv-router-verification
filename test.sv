@@ -1,13 +1,9 @@
-//Declare a program block with arguments to connect
-//to modport TB declared in interface
 program router_test(router_io.TB rtr_io);
 
-bit[3:0] sa; // source address (input port)
-bit[3:0] da; // destination address (output port)
-logic[7:0] payload[$]; // packet data array
+bit[3:0] sa;
+bit[3:0] da;
+logic[7:0] payload[$];
 
-//Define a System Verilog reset task to reset the DUT and to drive the frame_n, valid_n inputs of the DUT to 1 during reset
-//After 2 clock cycles drive the reset input of the DUT to 1
 
 	task reset();
 	    rtr_io.reset_n = 1'b0;
@@ -73,7 +69,7 @@ logic[7:0] payload[$]; // packet data array
 		@(rtr_io.cb);
 	endtask: send_payload
 
-//Declare an initial block and invoke the reset task. Use appropriate display statements
+
 	initial
 	 begin
 		reset();

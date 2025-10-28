@@ -1,16 +1,3 @@
-//Declare an interface "router_io"
-//Declare a clocking block driven by posedge of signal clock
-//Add all signals required to connect test program to the DUT
-//All directions must be with respect to test program
-//Add input and output skew in clocking block(optional)
-
-
-
-//Create a modport to connect to test program
-//Arguments should list clocking block and all other potential asynch signals
-
-
-
 interface router_io(input bit clock);
 
 	logic reset_n;
